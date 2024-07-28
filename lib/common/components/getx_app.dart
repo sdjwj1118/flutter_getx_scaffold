@@ -78,7 +78,6 @@ class GetxApp extends StatelessWidget {
   final ThemeData? highContrastTheme;
   final ThemeData? highContrastDarkTheme;
   final Map<Type, Action<Intent>>? actions;
-  final TransitionBuilder Function(BuildContext,Widget) builder;
 
   const GetxApp({
     super.key,
@@ -218,12 +217,11 @@ class GetxApp extends StatelessWidget {
             // EasyLoading 初始化
             widget = EasyLoading.init()(context, widget);
             Loading.init();
-            widget = builder(context,MediaQuery(
+            return MediaQuery(
                 data: MediaQuery.of(context)
                     .copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: widget,
-              ));
-            return widget;
+              );
           },
         );
       },
