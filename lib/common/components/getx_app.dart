@@ -223,7 +223,7 @@ class GetxApp extends StatelessWidget {
                     .copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: widget,
               ));
-            return widget
+            return widget;
           },
         );
       },
