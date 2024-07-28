@@ -10,7 +10,7 @@ import 'package:getx_scaffold/getx_scaffold.dart';
  * @copyright: Copyright © 2023-2024 Kxmrg
  * @license: MIT License
  * @date: 2024-06-29
- * @description: 
+ * @description:
  */
 
 /// GetxAppWidegt
@@ -78,7 +78,7 @@ class GetxApp extends StatelessWidget {
   final ThemeData? highContrastTheme;
   final ThemeData? highContrastDarkTheme;
   final Map<Type, Action<Intent>>? actions;
-  final TransitionBuilder Function(BuildContext, Widget?) builderFunction;
+  final TransitionBuilder Function()? builderFunction;
 
   const GetxApp({
     super.key,
@@ -143,7 +143,7 @@ class GetxApp extends StatelessWidget {
     this.highContrastTheme,
     this.highContrastDarkTheme,
     this.actions,
-    required this.builderFunction,
+    this.builderFunction,
   });
 
   @override
@@ -163,69 +163,71 @@ class GetxApp extends StatelessWidget {
       builder: (context, child) {
         //pull_to_refresh全局配置
         return GetMaterialApp(
-          navigatorKey: navigatorKey,
-          scaffoldMessengerKey: scaffoldMessengerKey,
-          home: home,
-          routes: routes,
-          initialRoute: initialRoute,
-          onGenerateRoute: onGenerateRoute,
-          onGenerateInitialRoutes: onGenerateInitialRoutes,
-          onUnknownRoute: onUnknownRoute,
-          navigatorObservers: navigatorObservers,
-          textDirection: textDirection,
-          title: title,
-          onGenerateTitle: onGenerateTitle,
-          color: color,
-          theme: theme,
-          darkTheme: darkTheme,
-          themeMode: themeMode ?? GlobalService.to.themeMode,
-          locale: locale,
-          fallbackLocale: fallbackLocale,
-          localizationsDelegates: localizationsDelegates,
-          localeListResolutionCallback: localeListResolutionCallback,
-          localeResolutionCallback: localeResolutionCallback,
-          supportedLocales: supportedLocales,
-          debugShowMaterialGrid: debugShowMaterialGrid,
-          showPerformanceOverlay: showPerformanceOverlay,
-          checkerboardRasterCacheImages: checkerboardRasterCacheImages,
-          checkerboardOffscreenLayers: checkerboardOffscreenLayers,
-          showSemanticsDebugger: showSemanticsDebugger,
-          debugShowCheckedModeBanner: debugShowCheckedModeBanner,
-          shortcuts: shortcuts,
-          scrollBehavior: scrollBehavior,
-          customTransition: customTransition,
-          translationsKeys: translationsKeys,
-          translations: translations,
-          onInit: onInit,
-          onReady: onReady,
-          onDispose: onDispose,
-          routingCallback: routingCallback,
-          defaultTransition: defaultTransition,
-          getPages: getPages,
-          opaqueRoute: opaqueRoute,
-          enableLog: enableLog,
-          logWriterCallback: logWriterCallback,
-          popGesture: popGesture,
-          transitionDuration: transitionDuration,
-          defaultGlobalState: defaultGlobalState,
-          smartManagement: smartManagement,
-          initialBinding: initialBinding,
-          unknownRoute: unknownRoute,
-          highContrastTheme: highContrastTheme,
-          highContrastDarkTheme: highContrastDarkTheme,
-          actions: actions,
-          builder: (context, widget) {
-            // EasyLoading 初始化
-            widget = EasyLoading.init()(context, widget);
-            Loading.init();
-            TransitionBuilder builder = builderFunction(context, MediaQuery(
-                data: MediaQuery.of(context)
-                    .copyWith(textScaler: const TextScaler.linear(1.0)),
-                child: widget,
-              ));
-              return builder;
-          }
-        );
+            navigatorKey: navigatorKey,
+            scaffoldMessengerKey: scaffoldMessengerKey,
+            home: home,
+            routes: routes,
+            initialRoute: initialRoute,
+            onGenerateRoute: onGenerateRoute,
+            onGenerateInitialRoutes: onGenerateInitialRoutes,
+            onUnknownRoute: onUnknownRoute,
+            navigatorObservers: navigatorObservers,
+            textDirection: textDirection,
+            title: title,
+            onGenerateTitle: onGenerateTitle,
+            color: color,
+            theme: theme,
+            darkTheme: darkTheme,
+            themeMode: themeMode ?? GlobalService.to.themeMode,
+            locale: locale,
+            fallbackLocale: fallbackLocale,
+            localizationsDelegates: localizationsDelegates,
+            localeListResolutionCallback: localeListResolutionCallback,
+            localeResolutionCallback: localeResolutionCallback,
+            supportedLocales: supportedLocales,
+            debugShowMaterialGrid: debugShowMaterialGrid,
+            showPerformanceOverlay: showPerformanceOverlay,
+            checkerboardRasterCacheImages: checkerboardRasterCacheImages,
+            checkerboardOffscreenLayers: checkerboardOffscreenLayers,
+            showSemanticsDebugger: showSemanticsDebugger,
+            debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+            shortcuts: shortcuts,
+            scrollBehavior: scrollBehavior,
+            customTransition: customTransition,
+            translationsKeys: translationsKeys,
+            translations: translations,
+            onInit: onInit,
+            onReady: onReady,
+            onDispose: onDispose,
+            routingCallback: routingCallback,
+            defaultTransition: defaultTransition,
+            getPages: getPages,
+            opaqueRoute: opaqueRoute,
+            enableLog: enableLog,
+            logWriterCallback: logWriterCallback,
+            popGesture: popGesture,
+            transitionDuration: transitionDuration,
+            defaultGlobalState: defaultGlobalState,
+            smartManagement: smartManagement,
+            initialBinding: initialBinding,
+            unknownRoute: unknownRoute,
+            highContrastTheme: highContrastTheme,
+            highContrastDarkTheme: highContrastDarkTheme,
+            actions: actions,
+            builder: (context, widget) {
+              // EasyLoading 初始化
+              widget = EasyLoading.init()(context, widget);
+              Loading.init();
+              TransitionBuilder builder = builderFunction!();
+              return builder(
+                context,
+                MediaQuery(
+                  data: MediaQuery.of(context)
+                      .copyWith(textScaler: const TextScaler.linear(1.0)),
+                  child: widget,
+                ),
+              );
+            });
       },
     );
   }
