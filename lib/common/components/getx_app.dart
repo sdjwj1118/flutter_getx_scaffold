@@ -223,7 +223,7 @@ class GetxApp extends StatelessWidget {
                 data: MediaQuery.of(context)
                     .copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: widget,
-              ))
+              ));
             }else{
               // 不随系统字体缩放比例
               return MediaQuery(
