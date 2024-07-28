@@ -219,7 +219,7 @@ class GetxApp extends StatelessWidget {
             widget = EasyLoading.init()(context, widget);
             Loading.init();
             if(builderFunction != null){
-              builderFunction!(context,MediaQuery(
+              return builderFunction!(context,MediaQuery(
                 data: MediaQuery.of(context)
                     .copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: widget,
