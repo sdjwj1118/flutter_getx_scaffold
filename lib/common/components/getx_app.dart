@@ -216,6 +216,7 @@ class GetxApp extends StatelessWidget {
           actions: actions,
           builder: (context, widget) {
             if(builderFunction != null){
+              print("start builderFunction");
               builderFunction!();
             }
             // EasyLoading 初始化
