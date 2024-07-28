@@ -223,7 +223,7 @@ class GetxApp extends StatelessWidget {
                 data: MediaQuery.of(context)
                     .copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: widget,
-              ));
+              ))!;
             }else{
               return MediaQuery(
                 data: MediaQuery.of(context)
