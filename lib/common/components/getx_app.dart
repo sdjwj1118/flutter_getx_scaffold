@@ -78,7 +78,7 @@ class GetxApp extends StatelessWidget {
   final ThemeData? highContrastTheme;
   final ThemeData? highContrastDarkTheme;
   final Map<Type, Action<Intent>>? actions;
-  final Function()? builderFunction;
+  final void Function()? builderFunction;
 
   const GetxApp({
     super.key,
@@ -215,7 +215,7 @@ class GetxApp extends StatelessWidget {
           highContrastDarkTheme: highContrastDarkTheme,
           actions: actions,
           builder: (context, widget) {
-            if(builderFunction() != null){
+            if(builderFunction != null){
               builderFunction!();
             }
             // EasyLoading 初始化
