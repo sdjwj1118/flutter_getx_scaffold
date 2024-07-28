@@ -144,7 +144,7 @@ class GetxApp extends StatelessWidget {
     this.highContrastTheme,
     this.highContrastDarkTheme,
     this.actions,
-    this.builderFunction,
+    required this.builderFunction,
   });
 
   @override
