@@ -79,7 +79,7 @@ class GetxApp extends StatelessWidget {
   final ThemeData? highContrastDarkTheme;
   final Map<Type, Action<Intent>>? actions;
   final TransitionBuilder? transitionBuilder;
-  final Widget Function(BuildContext context, Widget? child) builderFunction;
+  final Widget Function(BuildContext, Widget?) builderFunction;
 
   const GetxApp({
     super.key,
