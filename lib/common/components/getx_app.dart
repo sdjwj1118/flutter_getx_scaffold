@@ -215,7 +215,9 @@ class GetxApp extends StatelessWidget {
           highContrastDarkTheme: highContrastDarkTheme,
           actions: actions,
           builder: (context, widget) {
-            builderFunction();
+            if(builderFunction() != null){
+              builderFunction!();
+            }
             // EasyLoading 初始化
             widget = EasyLoading.init()(context, widget);
             Loading.init();
