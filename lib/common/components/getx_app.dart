@@ -78,7 +78,7 @@ class GetxApp extends StatelessWidget {
   final ThemeData? highContrastTheme;
   final ThemeData? highContrastDarkTheme;
   final Map<Type, Action<Intent>>? actions;
-  final void Function()? builderFunction;
+  final void Function(Widget)? builderFunction;
 
   const GetxApp({
     super.key,
@@ -215,19 +215,23 @@ class GetxApp extends StatelessWidget {
           highContrastDarkTheme: highContrastDarkTheme,
           actions: actions,
           builder: (context, widget) {
-            if(builderFunction != null){
-              print("start builderFunction");
-              builderFunction!();
-            }
             // EasyLoading 初始化
             widget = EasyLoading.init()(context, widget);
             Loading.init();
-            // 不随系统字体缩放比例
-            return MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.0)),
-              child: widget,
-            );
+            if(builderFunction != null){
+              builderFunction!(MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
+                child: widget,
+              ))?
+            }else{
+              // 不随系统字体缩放比例
+              return MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
+                child: widget,
+              );
+            }
           },
         );
       },
