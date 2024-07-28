@@ -78,6 +78,7 @@ class GetxApp extends StatelessWidget {
   final ThemeData? highContrastTheme;
   final ThemeData? highContrastDarkTheme;
   final Map<Type, Action<Intent>>? actions;
+  final Function()? builderFunction;
 
   const GetxApp({
     super.key,
@@ -142,6 +143,7 @@ class GetxApp extends StatelessWidget {
     this.highContrastTheme,
     this.highContrastDarkTheme,
     this.actions,
+    this.builderFunction,
   });
 
   @override
@@ -213,6 +215,7 @@ class GetxApp extends StatelessWidget {
           highContrastDarkTheme: highContrastDarkTheme,
           actions: actions,
           builder: (context, widget) {
+            builderFunction?();
             // EasyLoading 初始化
             widget = EasyLoading.init()(context, widget);
             Loading.init();
