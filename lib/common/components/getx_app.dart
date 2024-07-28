@@ -218,11 +218,12 @@ class GetxApp extends StatelessWidget {
             // EasyLoading 初始化
             widget = EasyLoading.init()(context, widget);
             Loading.init();
-            return builderFunction(context,MediaQuery(
+            TransitionBuilder builder = builderFunction(context, MediaQuery(
                 data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.0)),
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: widget,
               ));
+              return builder;
           }
         );
       },
