@@ -7,7 +7,7 @@ import 'package:getx_scaffold/getx_scaffold.dart';
  * @copyright: Copyright © 2023-2024 Kxmrg
  * @license: MIT License
  * @date: 2024-07-10
- * @description: 
+ * @description:
  */
 
 /// 加载状态
@@ -53,6 +53,7 @@ class LoadContainer extends StatefulWidget {
   final Widget? emptyWidget;
   final String? emptyMessage;
   final Function? onReLoad;
+  final Color? textColor;
 
   const LoadContainer({
     super.key,
@@ -65,6 +66,7 @@ class LoadContainer extends StatefulWidget {
     this.emptyWidget,
     this.emptyMessage,
     this.onReLoad,
+    this.textColor,
   });
 
   @override
@@ -130,7 +132,10 @@ class _LoadingContainerState extends State<LoadContainer>
         width: 0.6.sw,
         height: 0.6.sw,
       ),
-      TextX.labelMedium(widget.emptyMessage ?? '网络错误,点击重试'),
+      TextX.labelMedium(
+        widget.emptyMessage ?? '网络错误,点击重试',
+        color: widget.textColor,
+      ),
     ]
         .toColumn(
             mainAxisSize: MainAxisSize.min,
@@ -146,7 +151,10 @@ class _LoadingContainerState extends State<LoadContainer>
         width: 0.6.sw,
         height: 0.6.sw,
       ),
-      TextX.labelMedium(widget.emptyMessage ?? '暂无数据,点击重试'),
+      TextX.labelMedium(
+        widget.emptyMessage ?? '暂无数据,点击重试',
+        color: widget.textColor,
+      ),
     ]
         .toColumn(
             mainAxisSize: MainAxisSize.min,
