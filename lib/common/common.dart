@@ -83,51 +83,6 @@ Future<bool> isConnectedToWiFi() async {
   return connectivityResult.contains(ConnectivityResult.wifi);
 }
 
-/// 显示Toast
-void showToast(String msg) {
-  Toast.show(msg);
-}
-
-/// 显示成功Toast
-void showSuccessToast(String msg) {
-  Toast.success(msg);
-}
-
-/// 显示提示Toast
-void showInfoToast(String msg) {
-  Toast.info(msg);
-}
-
-/// 显示警告Toast
-void showWarningToast(String msg) {
-  Toast.warning(msg);
-}
-
-/// 显示错误Toast
-void showErrorToast(String msg) {
-  Toast.error(msg);
-}
-
-/// 显示loading
-void showLoading([String? msg]) {
-  Loading.show(msg);
-}
-
-/// 显示错误
-void showError([String? msg]) {
-  Loading.error(msg);
-}
-
-/// 显示提示
-void showInfo(String msg) {
-  Loading.showInfo(msg);
-}
-
-/// 隐藏loading
-void dismissLoading() {
-  Loading.dismiss();
-}
-
 /// 延时执行
 void delayed(int milliseconds, Function() callback) {
   Future.delayed(Duration(milliseconds: milliseconds), callback);
