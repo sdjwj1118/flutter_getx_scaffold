@@ -36,7 +36,7 @@ class DoublePressBackWidget extends StatelessWidget {
     if (_currentBackPressTime == null ||
         now.difference(_currentBackPressTime!) > const Duration(seconds: 2)) {
       _currentBackPressTime = now;
-      showToast(message ?? 'Press back again to exit');
+      // showToast(message ?? 'Press back again to exit');
       return false;
     }
     _currentBackPressTime = null;

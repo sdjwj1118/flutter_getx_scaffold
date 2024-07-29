@@ -17,10 +17,10 @@ class DialogPage extends GetView<DialogController> {
             title: '提示',
             messgae: '你确定要删除该条记录吗？',
             onConfirm: () {
-              showSuccessToast('Confirm');
+              // showSuccessToast('Confirm');
             },
             onCancel: () {
-              showErrorToast('Cancel');
+              // showErrorToast('Cancel');
             },
           );
         },
@@ -65,29 +65,29 @@ class DialogPage extends GetView<DialogController> {
                 title: 'Home',
                 icon: AntdIcon.home,
                 onTap: () {
-                  showToast('click');
+                  // showToast('click');
                 }),
             DialogMenuItem(
                 title: 'Camera',
                 icon: AntdIcon.camera,
                 onTap: () {
-                  showToast('click');
+                  // showToast('click');
                 }),
             DialogMenuItem(
                 title: 'Item',
                 subTitle: 'username: admin',
                 onTap: () {
-                  showToast('click');
+                  // showToast('click');
                 }),
             DialogMenuItem(
                 title: 'item',
                 onTap: () {
-                  showToast('click');
+                  // showToast('click');
                 }),
             DialogMenuItem(
                 title: 'item',
                 onTap: () {
-                  showToast('click');
+                  // showToast('click');
                 }),
           ]);
         },

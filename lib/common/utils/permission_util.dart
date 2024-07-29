@@ -49,7 +49,7 @@ class PermissionUtil {
     if (await completer.future) {
       return true;
     } else {
-      showError(error);
+      // showError(error);
       return false;
     }
   }

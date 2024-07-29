@@ -71,25 +71,25 @@ class HomePage extends GetView<HomeController> {
       ListTile(
         title: Text(TextKey.huoQuDangQianShiJianChuo.tr),
         onTap: () async {
-          showToast(getTimeStamp(isSecond: true).toString());
+          // showToast(getTimeStamp(isSecond: true).toString());
         },
       ),
       ListTile(
         title: Text(TextKey.shiJianChuoZhuanRiQi.tr),
         onTap: () async {
-          showToast(getTimeStamp().toDateTimeString() ?? '');
+          // showToast(getTimeStamp().toDateTimeString() ?? '');
         },
       ),
       ListTile(
         title: Text(TextKey.md5JiaMi.tr),
         onTap: () async {
-          showToast(getNowDateString().md5() ?? '');
+          // showToast(getNowDateString().md5() ?? '');
         },
       ),
       ListTile(
         title: Text(TextKey.base64BianMa.tr),
         onTap: () async {
-          showToast(getNowDateString().encodeBase64() ?? '');
+          // showToast(getNowDateString().encodeBase64() ?? '');
         },
       ),
       ListTile(
@@ -97,7 +97,7 @@ class HomePage extends GetView<HomeController> {
         onTap: () async {
           String version = await getVersion();
           String build = await getBuildNumber();
-          showToast('version:$version build:$build');
+          // showToast('version:$version build:$build');
         },
       ),
       ListTile(
@@ -114,16 +114,16 @@ class HomePage extends GetView<HomeController> {
           if (Platform.isIOS) {
             version = await getIosSystemVersion() ?? 'unknown';
           }
-          showToast('$deviceName $version');
+          // showToast('$deviceName $version');
         },
       ),
       ListTile(
         title: Text(TextKey.queRenWangLuoLianJie.tr),
         onTap: () async {
           if (await isNetworkAvailable()) {
-            showSuccessToast('Available');
+            // showSuccessToast('Available');
           } else {
-            showErrorToast('Unavailable');
+            // showErrorToast('Unavailable');
           }
         },
       ),
@@ -142,25 +142,25 @@ class HomePage extends GetView<HomeController> {
       ListTile(
         title: Text(TextKey.xianShiLoading.tr),
         onTap: () async {
-          showLoading('Loading...');
+          // showLoading('Loading...');
           delayed(3000, () {
-            dismissLoading();
+            // dismissLoading();
           });
         },
       ),
       ListTile(
         title: Text(TextKey.xianShiError.tr),
         onTap: () async {
-          showError('ERROR 500');
+          // showError('ERROR 500');
         },
       ),
       ListTile(
         title: Text(TextKey.qingChuTuPianHuanCun.tr),
         onTap: () async {
           if (await clearDiskCachedImages()) {
-            showSuccessToast('Success');
+            // showSuccessToast('Success');
           } else {
-            showErrorToast('Error');
+            // showErrorToast('Error');
           }
         },
       ),

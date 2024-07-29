@@ -41,7 +41,7 @@ class BaseWidgetsPage extends GetView<BaseWidgetsController> {
           '简易',
         ),
         TextSpanItem('可点击', onTap: () {
-          showInfoToast('onClick!');
+          // showInfoToast('onClick!');
         }),
         TextSpanItem(
           '文本测试',

@@ -14,7 +14,7 @@ class PermissionPage extends GetView<PermissionController> {
         title: const Text('申请相机权限'),
         onTap: () async {
           if (await requestCameraPermission()) {
-            showSuccessToast('已获取相机权限');
+            // showSuccessToast('已获取相机权限');
           }
         },
       ),
@@ -22,7 +22,7 @@ class PermissionPage extends GetView<PermissionController> {
         title: const Text('申请相册权限'),
         onTap: () async {
           if (await requestPhotosPermission()) {
-            showSuccessToast('已获取相册权限');
+            // showSuccessToast('已获取相册权限');
           }
         },
       ),
@@ -35,7 +35,7 @@ class PermissionPage extends GetView<PermissionController> {
             error: '请授权麦克风权限',
           );
           if (result) {
-            showSuccessToast('已获取麦克风权限');
+            // showSuccessToast('已获取麦克风权限');
           }
         },
       ),
