@@ -91,7 +91,7 @@ class _LoadingContainerState extends State<LoadContainer>
     _loadingAnimation = _loadingAnimationController.view;
     _childAnimationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 500),
       value: widget.controller.status == LoadStatus.loading ? 0.0 : 1.0,
     );
     _childAnimation = _childAnimationController.view;
